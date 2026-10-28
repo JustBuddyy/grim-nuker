@@ -17,6 +17,11 @@ Every destructive action is isolated. Missing perms, role hierarchy, rate limits
 - A bot token with **Administrator** (or at minimum Ban Members, Manage Roles, Manage Channels)
 - The bot's role must sit **above** any role you want deleted
 
+## License
+
+GPL-3.0, see [LICENSE](LICENSE). If you fork and distribute this, your
+version has to be GPL-3.0 too.
+
 ## Install
 
 ```bash
@@ -24,8 +29,3 @@ git clone https://github.com/YOU/grim-nuker
 cd grim-nuker
 pip install -r requirements.txt
 cp config.example.json config.json
-
-## License
-
-GPL-3.0 — see [LICENSE](LICENSE). If you fork and distribute this, your
-version has to be GPL-3.0 too.
