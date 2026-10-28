@@ -1,5 +1,5 @@
 # Grim Nuker — Copyright (C) 2026 JustBuddyy
-# Licensed under the GNU General Public License v3.0. See LICENSE.
+# Licensed under the GNU General Public License v3.0.
 
 import asyncio, sys
 from rich.console import Console
