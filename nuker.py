@@ -1,3 +1,6 @@
+# Grim Nuker — Copyright (C) 2026 JustBuddyy
+# Licensed under the GNU General Public License v3.0.
+
 import discord, asyncio, json, os, shutil
 
 CONFIG_PATH = "config.json"
