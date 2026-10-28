@@ -1,3 +1,6 @@
+# Grim Nuker — Copyright (C) 2026 JustBuddyy
+# Licensed under the GNU General Public License v3.0. See LICENSE.
+
 import asyncio, sys
 from rich.console import Console
 from rich.prompt import Prompt, Confirm, IntPrompt
