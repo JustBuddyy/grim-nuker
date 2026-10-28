@@ -24,3 +24,8 @@ git clone https://github.com/YOU/grim-nuker
 cd grim-nuker
 pip install -r requirements.txt
 cp config.example.json config.json
+
+## License
+
+GPL-3.0 — see [LICENSE](LICENSE). If you fork and distribute this, your
+version has to be GPL-3.0 too.
