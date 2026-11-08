@@ -29,3 +29,9 @@ git clone https://github.com/YOU/grim-nuker
 cd grim-nuker
 pip install -r requirements.txt
 cp config.example.json config.json
+```
+
+## Run
+```bash
+python main.py
+```
