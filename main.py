@@ -31,7 +31,8 @@ def edit_config(cfg):
 
 def main():
 		console.rule("[bold magenta]GRIM NUKER[/]")
-    if DRY: console.print("[bold yellow]DRY RUN — nothing will actually be deleted[/]")
+    if DRY: 
+		console.print("[bold yellow]DRY RUN — nothing will actually be deleted[/]")
     cfg = load_config()
 
     while True:
