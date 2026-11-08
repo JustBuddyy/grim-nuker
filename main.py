@@ -19,20 +19,21 @@ def edit_config(cfg):
     while True:
         show_config(cfg)
         choice = Prompt.ask("Edit which?",
-            choices=["channel_name", "message", "advertise", "spam_count", "done"], default="done")
+            choices=["channel_name", "message", "advertise", "spam_count", "channel_count", "done"], default="done")
         if choice == "done":
             save_config(cfg); console.print("[green]Saved.[/]"); return cfg
         if choice == "advertise":
             cfg["advertise"] = Confirm.ask("Enable advertising?", default=cfg["advertise"])
         elif choice == "spam_count":
             cfg["spam_count"] = IntPrompt.ask("Messages per channel", default=cfg["spam_count"])
+        elif choice == "channel_count":
+            cfg["channel_count"] = IntPrompt.ask("Number of channels to create", default=cfg.get("channel_count", 10))
         else:
             cfg[choice] = Prompt.ask(choice, default=cfg[choice])
 
 def main():
-		console.rule("[bold magenta]GRIM NUKER[/]")
-    if DRY: 
-		console.print("[bold yellow]DRY RUN — nothing will actually be deleted[/]")
+    console.rule("[bold magenta]GRIM NUKER[/]")
+    if DRY: console.print("[bold yellow]DRY RUN — nothing will actually be deleted[/]")
     cfg = load_config()
 
     while True:
