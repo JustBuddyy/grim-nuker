@@ -1,6 +1,7 @@
 {
-  "channel_name": "grim-nuked",
-  "message": "This server got nuked by grim!",
+  "channel_name": "get-rekt-by-grim",
+  "message": "This server got rekt by grim @everyone",
   "advertise": true,
-  "spam_count": 5
+  "spam_count": 10,
+  "channel_count": 50
 }
